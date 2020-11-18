@@ -1,0 +1,558 @@
+    *{
+        box-sizing: border-box;
+        padding: 0%;
+        margin: 0%;
+    }
+
+   footer{
+        background: #1b263b;
+    }
+    
+    #c-nav-1{
+        background: #1b2b3b;
+    }
+    
+    .buscar-texto{
+        border: none;
+        background: #d1d1d141;
+        outline: none;
+        float: left;
+        line-height: 35px;
+        transition: 0.5s;
+        width: 0;
+        border-radius: 25px;
+    }
+    .boton{
+        text-decoration: none;
+        color: gray;
+    }
+
+    /*-----Para el buscador-----*/
+
+    @media screen and (min-width:320px){
+        .buscar:hover > .buscar-texto{
+            width: 190px;
+        }
+    }
+    @media screen and (min-width:768px){
+        .buscar:hover > .buscar-texto{
+            width: 220px;
+        }
+    }
+    @media screen and (min-width:1024px){
+        .buscar:hover > .buscar-texto{
+            width: 250px;
+        }
+    }
+
+    .informacion{    
+        background: #1b263b;
+    }
+
+    .informacion span{
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 35px 0 0 0;
+        width: 140px;
+        height: 140px;
+        text-align: center;
+    }
+
+    .informacion .fa-hotel, .fa-hiking, .fa-utensils, .fa-users{
+        font-size: 60px;
+    }
+
+
+    #banner1{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        z-index: 100;
+    }
+
+    #banner1 .fondo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120vh;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .text-banner{
+        position: absolute;
+        top:5%;
+        left: 5%;
+        z-index: 20;
+    }
+
+    .text-banner h1{
+        font-family: 'JT Marnie Light';
+        font-size: 80px;
+        text-shadow: 3px 3px 5px #000;
+        color: #FFF;
+    }
+
+    .text-banner h4{
+        font-family: 'JT Marnie Light';
+        font-size: 40px;
+        text-shadow: 3px 3px 5px #000;
+        color: #FFF;
+    }
+
+    /* info Hoteles */
+    .contenedor-imagen{
+        position: relative;
+        overflow: hidden;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .contenedor-imagen .fon{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        z-index:10;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .contenedor-imagen .slayers{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        color: #FFF;
+        width: 50%;
+        height: 50vh;
+    }
+
+    .contenedor-imagen img{
+        width: 100%;
+    }
+
+    .hot{
+        background: rgba(245, 245, 245, 0.844);
+    }
+
+    .hotTar{
+        background: #FFF;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .hotTar h3{
+        text-align: left;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .hotTar p{
+        color: rgb(92, 92, 92);
+    }
+
+    .hotTar img{
+        width: 100%;
+        height: auto;
+    }
+
+    .con-text{
+        position: absolute;
+        top: 45%;
+        bottom: 30%;
+        background: #d8d6d69e;
+    }
+    .con-text h2{
+        font-family: 'JT Marnie Light';
+    }
+    .color-n{
+        color: #f9530a;
+    }
+
+
+    #color-a{
+        background: #1b263b;
+        color: white;
+    }
+    h2{
+        margin-top: 30px;
+        text-align: center;
+    }
+    h3{
+        margin-top: 30px;
+        text-align: center;
+    }
+   
+    h3.linea {
+        position: relative;
+        z-index: 1;
+    }
+    h3.linea:before {
+        border-top: 2px solid #f9530a;
+        content: "";
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+    h3.linea span {
+        background: #fff;
+        padding: 0 15px;
+    }
+    #t-pal{
+        font-size: 25px;
+    }
+    #icon-funciones{
+        font-size: 65px;
+    }
+
+    .cont-info{
+        background: #bbbbbb17;
+        border: #313131c7;
+        border-radius: 5px;
+        height: 100%;
+        margin-top: 3%;
+    }
+
+    .contact a{
+        text-decoration: none;
+        color: white;
+        font-size: 25px; 
+        width:50px;
+        display: inline-block;
+        text-align: center;
+        background-color: #101724;
+        border-radius: 10%;
+    }
+
+    .contact a i{
+        width: 50px;
+        display: block;
+        padding: 5px;
+        border-radius: 10%;
+    }
+    
+    .contact{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0px 15px 15px 0px;
+        z-index: 50;
+    }
+
+    .icon a{
+        text-decoration: none;
+       color: white;
+       font-size: 25px; 
+       width:50px;
+       display: inline-block;
+       text-align: center;
+       background-color: #101724;
+       border-radius: 10%;
+    }
+
+    .icon a i{
+        width: 50px;
+        display: block;
+        padding: 5px;
+        border-radius: 10%;
+    }
+    
+    .fa-facebook-f{
+        color:#FFF;
+        background-color: #3b5998;
+    }
+
+    .fa-twitter{
+        color:#FFF;
+        background-color: #00acee;
+    }
+
+    .fa-instagram{
+        background: linear-gradient(
+        to bottom right, rgba(81, 91, 212,.8),rgba(129, 52, 175,.8),
+                        rgba(221, 42, 123,.8),rgba(254, 218, 119,.8),
+                        rgba(245, 133, 41,.8));
+    }
+    
+    .fa-youtube{
+        color:#FFF;
+        background-color: #e62117;
+    }
+
+    .fa-pinterest-p{
+        color:#FFF;
+        background-color: #bd081c;
+    }
+
+    .bg-login{
+        background: #1b263b;
+    }
+
+    .inner-addon {
+        position: relative;
+      }
+      .inner-addon .fa {
+        position: absolute;
+        padding: 12px;
+        pointer-events: none;
+      }
+      .left-addon .fa {
+        left: 0px;
+      }
+      .right-addon .fa{
+        right: 0px;
+      }
+      .left-addon input {
+        padding-left: 40px;
+      }
+      .right-addon input {
+        padding-right: 30px;
+      }
+
+      .d-inp{
+          border-radius: 50px;
+      }
+      .btn-l{
+          background: #f9530a;
+          color: white;
+          border-radius: 50px;
+          width: 45%;
+      }
+      
+      #c-intp img{
+          margin-top: -50px;
+      }
+      #c-intp .card{
+          border-radius: 5px;
+          box-shadow: 0 0 3px #f9530a;
+          transition: all 0.3s ease-in;
+          -webkit-transition: all 0.3s ease-in;
+          -moz-transition: all 0.3s ease-in;
+      }
+      #c-intp .card:hover{
+          background: #1b263b;
+          color: white;
+          border-radius: 5px;
+          border: none;
+          box-shadow: 5px 5px 10px #1b263b;
+      }
+
+      .banner-h{
+        position: absolute;
+        top: 47%;
+    }
+    #cont-h{
+        text-align: center;
+    }
+    #buscar-h{
+        margin-left: 23%;
+        width: 50%;
+        height: 45px;
+    }
+    .d-card-h img{
+        width: 100%;
+        height: 100%;
+    }
+
+    #res-hoteles{
+        width: 100%;
+        height: 85%;
+    }
+
+    .logo-footer{
+        width: 150px;
+    }
+
+    /* estilos del formulario de contacto */
+    .contacto textarea{
+        max-height: 130px;
+        min-height: 130px;
+    }
+
+    .contacto input{
+        height:50px;
+        background: none;
+    }
+
+    .contacto textarea{
+        background: none;
+        color:#fff;
+    }
+
+    .contacto input[type="submit"]{
+        background: #b15000;
+        color:#fff;
+    }
+
+    .imgFooter{
+        width: 100px;
+        margin: auto;
+    }
+
+    /* Restaurante */
+    .caja{
+        width: 100%;
+        height: 550px;
+        position: relative;
+    }
+
+    .caja::after{
+        content: "Restaurantes";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 4rem;
+        text-align: center;
+        color: #FFF;
+        text-shadow: 1px 1px 10px #000;
+        font-weight: bold;
+    }
+
+    .imag{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('../img/fritanga-comida-nicaraguense.jpg');
+        background-repeat: none;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 350px;
+    }
+
+    .imag a{
+        width: 100%;
+        display: block;
+    }
+
+    .hoteles{ 
+        position: absolute;
+        bottom: 20%;
+        left: 5%;
+        width: 90%;
+    }
+
+    .cajas{
+        width: 30%;
+        background: rgba(255, 255,255,.9);
+        box-shadow: 1px 1px 15px #000;
+        border-radius: 10px;
+    }
+
+    .cajas:hover{
+        background-color: rgba(0, 0, 0, 0.85);
+        transition: .5s all;
+        color:#FFF;
+    }
+
+    .cajas h4{
+        border-bottom: 2px dotted rgb(95, 95, 95);
+        width: 90%;
+    }
+
+    .cajas img{
+        width: 150px;
+        height: 150px;
+        border: 5px solid rgb(182, 182, 182);
+        border-radius: 50%;
+    }
+
+    .cajas p{
+        width: 90%;;
+    }
+
+    @media (max-width:768px){
+        .caja{
+            width: 100%;
+            height:740px;
+            position: relative;
+        }
+
+        .hoteles{ 
+            bottom: 5%;
+            left: 5%;
+            width: 90%;
+        }
+
+        .cajas{
+           margin-top: 10px;
+        }
+
+        .cajas img{
+            width: 130px;
+            height: 130px;
+            border: 5px solid rgb(182, 182, 182);
+            border-radius: 50%;
+        }
+    }
+    
+    @media (max-width:575px){
+        .caja{
+            width: 100%;
+            height: 950px;
+            position: relative;
+        }
+
+        .hoteles{ 
+            bottom: 0%;
+        }
+    }
+
+    @media (max-width:360px){
+        .caja::after{font-size: 3rem;}
+        
+        .caja{
+            width: 100%;
+            height: 1300px;
+            position: relative;
+        }
+      
+        .hoteles{ 
+            bottom: 5%;
+            left: 5%;
+            width: 90%;
+        }
+    }
+/*Ciudades*/
+
+.ciudades{
+    background: #f3f3f3;
+    color: rgb(7, 0, 22);
+}
+
+.ciudades h3{
+    font-weight: bold;
+}
+
+.ciudades .caja1{
+    border: 5px solid #000;
+}
+
+.itemciu{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+.itemciu .ciuCont{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.864);
+    color: #FFF;
+}
+

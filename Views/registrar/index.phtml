@@ -1,0 +1,69 @@
+<div class="container">
+    <form method="POST">
+        <div class="row">
+            <!-- grupo nombre -->
+            <div class="form-group col-md-6">
+                <label class="control-label" for="nombre">Nombres: </label>
+                <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresa el Nombre">
+            </div>
+
+            <!-- grupo apellido -->
+            <div class="form-group col-md-6">
+                <label class="control-label">Apellido: </label>
+                <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Ingresa el Apellido">
+            </div>
+            <!-- grupo edad -->
+            <div class="form-group col-md-6">
+                <label class="control-label">Fecha de Nacimiento: </label>
+                <input class="form-control" type="text" name="edad" id="edad">
+            </div>
+            <!-- grupo telefono -->
+            <div class="form-group col-md-6">
+                <label class="control-label">Teléfono: </label>
+                <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Número de Teléfono">
+            </div>
+            <!-- grupo telefono -->
+            <div class="form-group col-md-6">
+                <label class="control-label">Nacionalidad: </label>
+                <input class="form-control" type="text" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+            </div>
+            <!-- grupo telefono -->
+            <div class="form-group col-md-6">
+                <label class="control-label">Idioma: </label>
+                <input class="form-control" type="text" name="idioma" id="idioma" placeholder="Idioma">
+            </div>
+        </div>
+        <!-- Datos de la cuenta  -->
+        <p class="style-p mt-3">Datos de la cuenta</p>
+        <hr>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label formulario__label">Nombres de usuario: </label>
+                <input class="form-control formulario-input" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingresa el Nombre">
+
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label">Correo: </label>
+                <input class="form-control" type="email" name="correo" id="correo" placeholder="Ingresa correo electronico">
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label">Contraseña: </label>
+                <input class="form-control" type="password" name="pass" id="pass" placeholder="Ingresa el nombre">
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label">Repetir Contraseña: </label>
+                <input class="form-control" type="password" name="confirPass" id="confirPass" placeholder="Ingresa el nombre">
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="text-center mt-3 mr-4 ml-3">
+                <a href="<?= BASE_URL ?>index"><button class="btn btn-primary" type="button">Cancelar</button></a>
+            </div>
+
+            <div class="text-center mt-3">
+                <input type="submit" value="Registrarse" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>

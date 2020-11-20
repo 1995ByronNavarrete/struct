@@ -61,6 +61,18 @@ class Helpers
         return false;
     }
 
+    public static function validarTelefono($numero){
+        $reg = "";
+        if(preg_match('/^(\+505|505)?[-]*[0-9]{4}[-]*[0-9]{4}$/', $numero)) return $numero;
+        else return false;
+    }
+
+    public static function passwordValido($pass){
+        if(preg_match("/^[A-Za-z0-9]+$/",$pass)){
+            return $pass;
+        }else return false;
+    } 
+
     // Generar una contraseña de 10 caracteres
     public static function passwordGenerator($length = 10)
     {

@@ -47,6 +47,32 @@ class registrarController extends Controller
         }
     }
 
+    #VERIFICAR TELEFONO VALIDO
+    public function Telefono($numero){
+        if (!empty($numero)) {
+            if (Helpers::validarTelefono($numero)) {
+                return ["success" => 0, "msj" => ""];
+            } else {
+                return ["success" => 1, "msj" => "<p class='text text-danger'>Telefono Invalido</p>"];
+            }
+        }
+    }
+
+    public function passwordIgual($passUno, $passDos){
+        if(!empty($passUno) && !empty($passDos)){
+            if(Helpers::passwordValido($passUno) && Helpers::passwordValido($passDos)){
+                if($passUno == $passDos){
+                    return ["success" => 0, "msj" => ""];
+                }else{
+                    return ["success" => 1, "msj" => "<p class='text text-danger'>Las contraseñas no coinciden</p>"];
+                }
+            }else{
+                return ["success" => 1, "msj" => "<p class='text text-danger'>Las contraseñas no pueden llevar simbolos extraños</p>"];
+            }
+        }
+    }
+
+    #TELEFONO  
     #METODO INDEX 
     public function index()
     {
@@ -56,7 +82,7 @@ class registrarController extends Controller
             if (
                 $this->getTexto("correo") && $this->getTexto('nombreUsuario') && $this->getTexto('nombre') &&
                 $this->getTexto('apellido') && $this->getTexto('nacionalidad') && $this->getTexto('edad') &&
-                $this->getTexto('idioma')
+                $this->getTexto('idioma') &&  $this->getTexto('telefono') &&  $this->getTexto('pass')
             ) {
                 /*
                     VALIDACIONES
@@ -64,6 +90,8 @@ class registrarController extends Controller
                     ->Correo y NombreUsuario no deben coincidir en la Base de datos Repetido()
                     ->Campos que permitan solo caracteres cadena()
                     ->Campos que permitan solo numeros numeros()
+                    ->Campo que permita numero de telefono valido de nicaragua Telefono()
+                    ->Campo con contraseñas iguales passwordIgual()
                 */
                 $datos = array(
                     "correo" => $this->Repetido($this->getTexto("correo"), "getCorreo", "Correo", "correoValido"),
@@ -72,15 +100,27 @@ class registrarController extends Controller
                     "apellido" => $this->cadena(Helpers::strClean($this->getTexto('apellido')), "apellido"),
                     "nacionalidad" => $this->cadena(Helpers::strClean($this->getTexto('nacionalidad')), "nacionalidad"),
                     "edad" => $this->numeros(Helpers::strClean($this->getTexto('edad')), "edad"),
-                    "idioma" => $this->cadena(Helpers::strClean($this->getTexto('idioma')), "idioma")
+                    "idioma" => $this->cadena(Helpers::strClean($this->getTexto('idioma')), "idioma"),
+                    "telefono" => $this->Telefono($this->getTexto('telefono')),
+                    "password" => $this->passwordIgual($this->getTexto('pass'),$this->getTexto('confirPass'))
                 );
 
+                //validaciones completas
                 if (
                     !$datos['correo']['success'] && !$datos['usuario']['success'] && !$datos['nombre']['success'] &&
                     !$datos['apellido']['success'] && !$datos['nacionalidad']['success'] && !$datos['edad']['success'] &&
-                    !$datos['idioma']['success']
+                    !$datos['idioma']['success'] && !$datos['telefono']['success'] && !$datos['password']['success']
                 ) {
                     //CODIGO PARA ALMACENAR EL TURISTA
+                    $this->modeloReg->insertTurista(array(
+                        "correo" => $this->getTexto("correo"), "nombreUsuario" => $this->getTexto('nombreUsuario'),
+                        "nombre" => $this->getTexto('nombre'), "apellido" =>$this->getTexto('apellido'),
+                        "nacionalidad" =>$this->getTexto('nacionalidad'), "edad" => $this->getTexto('edad'),
+                        "idioma" => $this->getTexto('idioma'), "telefono" => $this->getTexto('telefono'),
+                        "pass" => password_hash($this->getTexto('pass'),PASSWORD_DEFAULT,['cost' => 10]), "token" => Helpers::token()
+                    ));
+                    
+                    $this->redireccionar("index");
                 } else {
                     $this->_view->correoError = $datos['correo']['msj'];
                     $this->_view->usuarioError = $datos['usuario']['msj'];
@@ -89,9 +129,13 @@ class registrarController extends Controller
                     $this->_view->nacionalidadError = $datos['nacionalidad']['msj'];
                     $this->_view->edadError = $datos['edad']['msj'];
                     $this->_view->idiomaError = $datos['idioma']['msj'];
+                    $this->_view->telefonoError = $datos['telefono']['msj'];
+                    $this->_view->passwordError = $datos['password']['msj'];
                 }
             } else  $this->_view->formRequerido = "<p class='alert alert-danger font-weight-bold mt-2'>Campos Requeridos</p>";
         }
+
+            $this->_view->telefono = Helpers::passwordValido("123a");
 
         // EN CASO DE QUE NO SE HA ENVIADO INFORMACION REDIRIGIMOS A LA VISTA
         $this->_view->getView("index", $this->datos);

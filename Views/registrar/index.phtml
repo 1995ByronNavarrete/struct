@@ -24,6 +24,7 @@
             <div class="form-group col-md-6">
                 <label class="control-label">Teléfono: </label>
                 <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Número de Teléfono">
+                <?php if(isset($this->telefonoError)) echo $this->telefonoError;?>
             </div>
             <!-- grupo telefono -->
             <div class="form-group col-md-6">
@@ -60,6 +61,7 @@
                 <label class="control-label">Repetir Contraseña: </label>
                 <input class="form-control" type="password" name="confirPass" id="confirPass" placeholder="Ingresa el nombre">
             </div>
+            <div class="col-md-12"><?php if(isset($this->passwordError)) echo $this->passwordError;?></div>
         </div>
         <div class="row">
 
@@ -72,6 +74,6 @@
             </div>
         </div>
     </form>
-    
+
     <?php if(isset($this->formRequerido)) echo $this->formRequerido;?>
 </div>

@@ -39,7 +39,7 @@ class Helpers
 
     //Cadena de texto solo caracteres
     public static function nombresValidos($cadena){
-        if(preg_match('/^[A-Za-zÑñáéíóúÁÉÍÓÚ\s]+$/',$cadena)){
+        if(preg_match('/^[A-Za-zÑñáéíóúÁÉÍÓÚ\s]+$/i',$cadena)){
             return $cadena;
         }
         return false;

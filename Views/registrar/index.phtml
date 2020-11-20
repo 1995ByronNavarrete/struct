@@ -5,17 +5,20 @@
             <div class="form-group col-md-6">
                 <label class="control-label" for="nombre">Nombres: </label>
                 <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresa el Nombre">
+                <?php if(isset($this->nombreError)) echo $this->nombreError;?>
             </div>
 
             <!-- grupo apellido -->
             <div class="form-group col-md-6">
                 <label class="control-label">Apellido: </label>
                 <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Ingresa el Apellido">
+                <?php if(isset($this->apellidoError)) echo $this->apellidoError;?>
             </div>
             <!-- grupo edad -->
             <div class="form-group col-md-6">
-                <label class="control-label">Fecha de Nacimiento: </label>
+                <label class="control-label">Edad: </label>
                 <input class="form-control" type="text" name="edad" id="edad">
+                <?php if(isset($this->edadError)) echo $this->edadError;?>
             </div>
             <!-- grupo telefono -->
             <div class="form-group col-md-6">
@@ -26,11 +29,13 @@
             <div class="form-group col-md-6">
                 <label class="control-label">Nacionalidad: </label>
                 <input class="form-control" type="text" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+                <?php if(isset($this->nacionalidadError)) echo $this->nacionalidadError;?>
             </div>
             <!-- grupo telefono -->
             <div class="form-group col-md-6">
                 <label class="control-label">Idioma: </label>
                 <input class="form-control" type="text" name="idioma" id="idioma" placeholder="Idioma">
+                <?php if(isset($this->idiomaError)) echo $this->idiomaError;?>
             </div>
         </div>
         <!-- Datos de la cuenta  -->
@@ -40,11 +45,12 @@
             <div class="form-group col-md-6">
                 <label class="control-label formulario__label">Nombres de usuario: </label>
                 <input class="form-control formulario-input" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingresa el Nombre">
-
+                <?php if(isset($this->usuarioError)) echo $this->usuarioError;?>
             </div>
             <div class="form-group col-md-6">
                 <label class="control-label">Correo: </label>
                 <input class="form-control" type="email" name="correo" id="correo" placeholder="Ingresa correo electronico">
+                <?php if(isset($this->correoError)) echo $this->correoError;?>
             </div>
             <div class="form-group col-md-6">
                 <label class="control-label">Contraseña: </label>
@@ -66,4 +72,6 @@
             </div>
         </div>
     </form>
+    
+    <?php if(isset($this->formRequerido)) echo $this->formRequerido;?>
 </div>
